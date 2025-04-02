@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
 import AppRoutes from './AppRoutes';
 import { ThemeProvider } from './context/ThemeContext';
 import { useTheme } from './context/ThemeContext';
@@ -10,7 +9,6 @@ const AppContent = () => {
   
   return (
     <div className={`flex h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
-      <Sidebar />
       <main className={`flex-1 overflow-auto p-4 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
         <AppRoutes />
       </main>

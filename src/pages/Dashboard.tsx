@@ -11,6 +11,7 @@ import {
   ArcElement,
 } from 'chart.js';
 import { Bar, Pie } from 'react-chartjs-2';
+import Map from '../components/Map';
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +25,7 @@ ChartJS.register(
 
 const Dashboard = () => {
   const { isDarkMode } = useTheme();
+  const googleMapsApiKey = 'AIzaSyCP7fUHlKJ3_sWt7jw2gVg0ZeRIYIIpMio';
 
   const barData = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
@@ -153,7 +155,7 @@ const Dashboard = () => {
       </div>
 
       {/* Review System */}
-      <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-900' : 'bg-white'} shadow-lg`}>
+      <div className={`p-6 rounded-lg ${isDarkMode ? 'bg-gray-900' : 'bg-white'} shadow-lg mb-8`}>
         <h3 className="text-lg font-semibold mb-4">Recent Reviews</h3>
         <div className="space-y-4">
           <div className={`p-4 rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
@@ -188,6 +190,9 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      
+      {/* Map Section */}
+      <Map apiKey={googleMapsApiKey} />
     </div>
   );
 };
